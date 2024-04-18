@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width>, initial-scale=0">
+         <link rel="stylesheet" href="assets/css/styles.css">
+         <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
+
+    <title>Plant EncycloPedia</title>
+    
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 00 px;
+           
+        }
+
+         h3, p {
+            margin: 0;
+        }
+        
+
+
+/* CSS styles for the heading */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #0b0a0a;
+    font-size: 48px;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    text-transform: uppercase;
+    padding: 20px;
+    /*background-image: linear-gradient(45deg, #4CAF50, #FF5722);*/
+    border-radius: 10px;
+    
+    animation: fadeInUp 1s forwards; /* Apply animation */
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Optional: Add animation for hover effect */
+h2::after {
+    content: ''; /* Add pseudo-element for animation */
+    position: absolute; /* Position the pseudo-element */
+    left: 0; /* Align the pseudo-element to the left */
+    bottom: -5px; /* Move the pseudo-element below the text */
+    width: 10%; /* Set the width to match the text */
+    height: 2px; /* Set the height of the underline */
+    background-color: #333; /* Set color of the underline */
+    transition: width 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* Apply animation on hover */
+h2:hover::after {
+    width: 50%; /* Adjust the width of the underline on hover */
+}
+
+
+
+p {
+    color: #444;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 8000px;
+    transition: transform 0.3s; /* Add transition for smooth transform change */
+    animation: fadeInUp 1s forwards; /* Apply animation */
+}
+
+p:hover {
+    transform: scale(1.05); /* Scale up the paragraph on hover */
+}
+
+
+
+
+.product__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the number of columns */
+    grid-auto-rows: 1fr; /* Set the height of each row */
+    gap: 20px;
+    animation: fadeInUp 1s forwards;
+    max-width: 800px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+
+
+        .product__card {
+            
+            border-radius: 1px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .product__card:hover {
+            transform: scale(1.05);
+        }
+
+        .product__img {
+            width: 100%;
+            height: 90%;
+            max-width: 200px; /* Set a maximum width to maintain proportions */
+            max-height: 100px; /* Set a maximum height to maintain proportions */
+            object-fit:contain; /* Ensure images maintain their aspect ratio and are centered */
+
+        }
+        
+
+        .product__title {
+            font-size: 1.0rem;
+            margin: 10px 0;
+            display: block;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+
+        .product__price {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .button--flex {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .button--flex:hover {
+            background-color: #45a049;
+        }
+
+        /* Style the back button */
+        .back-button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+            margin: 10px; /* Add margin to create space around the button */
+        }
+        
+        .back-button:hover {
+            background-color: #45a049; /* Darken the background color on hover */
+        }
+        .search-container {
+            margin-bottom: 20px;
+        }
+        
+        #search-bar {
+            padding: 10px;
+            width: 850px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+   
+    <section class="product section container" id="products">
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search...">
+            <button type="button" onclick="search()">Search</button>
+        </div>
+        
+        <h2 class="section__title-center">
+            Plant EncycloPedia 
+        </h2>
+        
+        
+
+       
+           <p> "Welcome to our exclusive collection of premium plants!
+        
+             Discover a world of botanical beauty with our handpicked 
+            selection of exquisite plants. 
+             From vibrant succulents to lush foliage, 
+            each plant in our collection is meticulously curated to bring
+             natural elegance into your home or garden. Whether you're a 
+             seasoned plant enthusiast or a budding gardener, our diverse 
+             range offers something for everyone. Explore our catalog and 
+             elevate your space with the timeless charm of nature."
+       
+            </p>
+        <div class="product__container grid">
+            <div id="product-details" class="product-details">
+          
+            
+            
+            <article class="product__card" onclick="showDetails('Tomato Plant',  'Family: Solanaceae\tThe Tomato Plant belongs to the Solanaceae family, which also includes other plants like potatoes, eggplants, and peppers. This family is known for its diverse range of fruiting and flowering plants. \t\t\t Soil Type: Well-drained \tTomato Plants thrive in well-drained soil that is rich in organic matter. They prefer soil with good aeration and drainage, which helps prevent waterlogging and root rot.\t\t\t Water Requirements: High \tTomato Plants have high water requirements, especially during the growing season. They need consistent watering to ensure proper growth and fruit development. However, its essential to avoid overwatering, as it can lead to issues like root rot.\t\t\t Sunlight Needs: Full sun \tTomato Plants require full sunlight to thrive. They need at least 6-8 hours of direct sunlight per day to grow and produce healthy fruits. Insufficient sunlight can result in leggy growth and poor fruit set.\t\t\tPlanting Depth: 1/4 inch \tWhen planting Tomato Seeds or seedlings, its essential to ensure the correct planting depth. Tomato Seeds should be planted about 1/4 inch deep in the soil, while seedlings should be planted at the same depth as they were in their containers.\t\t\tHarvesting Time: 60-85 days \tThe time to harvest tomatoes depends on the variety and growing conditions. Generally, tomatoes can be harvested 60-85 days after transplanting or planting seeds. Its essential to pick tomatoes when they are fully ripe for the best flavor and texture')">
+                <div class='product__circle'></div>
+                <img src="assets/img/tomato.png" alt="" class="product__img">
+                <h3 class="product__title">Tomato Plant</h3>
+                   <button class="button--flex product__button">
+                    <i class="ri-shopping-bag-line"></i>
+                </button>
+            </article>
+            
+            
+            
+          
+            
+            
+            <article class="product__card" onclick="showDetails('Spinach Plant','Family: Amaranthaceae\tThe Spinach Plant belongs to the Amaranthaceae family, which also includes other plants like beets, chard, and quinoa. This family is known for its diverse range of leafy greens and grains. \t\t\t Soil Type: Well-drained \tSpinach Plants thrive in well-drained soil that is rich in organic matter. They prefer soil with good aeration and drainage, which helps prevent waterlogging and root rot.\t\t\t Water Requirements: High \tSpinach Plants have high water requirements, especially during the growing season. They need consistent watering to ensure proper growth and leaf development. However, its essential to avoid overwatering, as it can lead to issues like fungal diseases.\t\t\t Sunlight Needs: Full sun to partial shade \tSpinach Plants require full sun to partial shade to thrive. They need at least 4-6 hours of direct sunlight per day for optimal growth and leaf production. However, they can also tolerate some shade, especially in hot climates.\t\t\tPlanting Depth: 1/2 inch \tWhen planting Spinach Seeds or seedlings, its essential to ensure the correct planting depth. Spinach Seeds should be planted about 1/2 inch deep in the soil, while seedlings should be planted at the same depth as they were in their containers.\t\t\tHarvesting Time: 40-50 days \tThe time to harvest spinach depends on the variety and growing conditions. Generally, spinach can be harvested 40-50 days after planting or sowing seeds. Its essential to pick spinach leaves when they are young and tender for the best flavor and texture.')">
+                    <div class="product__circle"></div>
+                    <img src="assets/img/spinach.png" alt="" class="product__img">
+                    <h3 class="product__title">Spinach Plant</h3>
+                           <button class="button--flex product__button">
+                        <i class="ri-shopping-bag-line"></i>
+                    </button>
+            </article>
+                
+
+              
+          
+            
+            
+                <article class="product__card" onclick="showDetails('Aloe Vera Plant','Family: Asphodelaceae\tThe Aloe Vera Plant belongs to the Asphodelaceae family, which also includes other plants like agaves and haworthias. This family is known for its diverse range of succulent plants. \t\t\t Soil Type: Well-drained \tAloe Vera Plants thrive in well-drained soil that is gritty and sandy. They prefer soil with excellent drainage to prevent waterlogging and root rot.\t\t\t Water Requirements: Low \tAloe Vera Plants have low water requirements and are highly drought-tolerant. They are adapted to arid conditions and only need occasional watering, allowing the soil to dry out between waterings.\t\t\t Sunlight Needs: Full sun to partial shade \tAloe Vera Plants require full sun to partial shade to thrive. They can tolerate direct sunlight, especially in cooler climates, but may need some protection from intense afternoon sun in hotter regions.\t\t\tPlanting Depth: Shallow \tWhen planting Aloe Vera pups or offsets, its essential to ensure shallow planting depth. Aloe Vera pups should be planted with their roots just below the soil surface, allowing them to establish quickly.\t\t\tHarvesting Time: Continuous \tAloe Vera gel can be harvested continuously throughout the plants life. Leaves can be harvested as needed, typically when they reach a mature size and thickness. Its essential to harvest leaves carefully to avoid damaging the plant.')">
+                        <div class="product__circle"></div>
+                        <img src="assets/img/product3.png" alt="" class="product__img">
+                        <h3 class="product__title">Aloe Vera Plant</h3>
+                        <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                </article>
+              
+
+               
+          
+            
+            
+                    <article class="product__card" onclick="showDetails('Corriander Plant','Family: Apiaceae\tThe Coriander Plant belongs to the Apiaceae family, which also includes other plants like carrots, parsley, and celery. This family is known for its diverse range of aromatic herbs and vegetables. \t\t\t Soil Type: Well-drained \tCoriander Plants thrive in well-drained soil that is fertile and loamy. They prefer soil with good drainage to prevent waterlogging and root rot.\t\t\t Water Requirements: Moderate \tCoriander Plants have moderate water requirements. They need consistent watering, especially during the germination and early growth stages, but its essential to avoid overwatering, as it can lead to issues like damping off.\t\t\t Sunlight Needs: Full sun to partial shade \tCoriander Plants require full sun to partial shade to thrive. They prefer cooler temperatures and may bolt or go to seed prematurely in hot weather, so providing some shade during the hottest part of the day can help prolong the harvest.\t\t\tPlanting Depth: 1/4 to 1/2 inch \tWhen planting Coriander Seeds, its essential to sow them at a depth of 1/4 to 1/2 inch in the soil. Seeds should be spaced about 6 to 8 inches apart to allow room for growth.\t\t\tHarvesting Time: 45-70 days \tThe time to harvest coriander depends on whether you are harvesting the leaves (cilantro) or the seeds (coriander). Cilantro leaves can be harvested as soon as the plant reaches a usable size, typically 45-70 days after sowing. Coriander seeds are harvested when the plant bolts and produces seed heads, usually around 90-120 days after sowing.')">
+                            <div class="product__circle"></div>
+                            <img src="assets/img/corr.png" alt="" class="product__img">
+                            <h3 class="product__title">Corriander Plant</h3>
+                                <button class="button--flex product__button">
+                                <i class="ri-shopping-bag-line"></i>
+                            </button>
+                    </article>
+                   
+    
+
+                    <article class="product__card" onclick="showDetails('Bell Pepper Plant','Family: Solanaceae\tThe Bell Pepper Plant belongs to the Solanaceae family, which also includes other plants like tomatoes, potatoes, and eggplants. This family is known for its diverse range of fruiting and flowering plants. \t\t\t Soil Type: Well-drained \tBell Pepper Plants thrive in well-drained soil that is rich in organic matter. They prefer soil with good aeration and drainage, which helps prevent waterlogging and root rot.\t\t\t Water Requirements: Moderate \tBell Pepper Plants have moderate water requirements. They need consistent watering, especially during the growing season, but its essential to avoid overwatering, as it can lead to issues like blossom end rot.\t\t\t Sunlight Needs: Full sun \tBell Pepper Plants require full sunlight to thrive. They need at least 6-8 hours of direct sunlight per day to grow and produce healthy fruits. Insufficient sunlight can result in poor fruit development and susceptibility to diseases.\t\t\tPlanting Depth: 1/4 to 1/2 inch \tWhen planting Bell Pepper Seeds or seedlings, its essential to ensure the correct planting depth. Seeds should be planted about 1/4 to 1/2 inch deep in the soil, while seedlings should be planted at the same depth as they were in their containers.\t\t\tHarvesting Time: 60-90 days \tThe time to harvest bell peppers depends on the variety and growing conditions. Generally, bell peppers can be harvested 60-90 days after transplanting or planting seeds. Its essential to pick peppers when they reach the desired size and color for the best flavor and texture.')">
+                        <div class="product__circle"></div>
+                        <img src="assets/img/bp.png" alt="" class="product__img">
+                        <h3 class="product__title">Bell Pepper Plant</h3>
+                           <button class="button--flex product__button">
+                            <i class="ri-shopping-bag-line"></i>
+                        </button>
+                </article>
+            
+
+                <article class="product__card" onclick="showDetails('Sunflower Plant','Family: Asteraceae\tThe Sunflower Plant belongs to the Asteraceae family, which also includes other plants like daisies, dandelions, and lettuce. This family is known for its diverse range of flowering plants, including both annuals and perennials. \t\t\t Soil Type: Well-drained \tSunflower Plants thrive in well-drained soil that is loose and fertile. They prefer soil with good drainage to prevent waterlogging and root rot.\t\t\t Water Requirements: Moderate \tSunflower Plants have moderate water requirements. They need consistent watering, especially during the germination and early growth stages, but they can tolerate some drought once established.\t\t\t Sunlight Needs: Full sun \tSunflower Plants require full sunlight to thrive. They are heliotropic, meaning they track the suns movement throughout the day, so planting them in a sunny location where they can receive at least 6-8 hours of direct sunlight is essential.\t\t\tPlanting Depth: 1 to 2 inches \tWhen planting Sunflower Seeds, its essential to sow them at a depth of 1 to 2 inches in the soil. Seeds should be spaced about 6 to 12 inches apart, depending on the variety and expected size of the mature plants.\t\t\tHarvesting Time: 70-100 days \tThe time to harvest sunflowers depends on the variety and intended use. For cut flowers, sunflowers can be harvested when the petals are fully developed and the back of the flower head turns yellow. For seeds, harvest when the back of the flower head turns brown and the seeds are plump and firm, usually around 70-100 days after planting.')">
+                    <div class="product__circle"></div>
+                    <img src="assets/img/sf.png" alt="" class="product__img">
+                    <h3 class="product__title">Sunflower Plant</h3>
+                    <button class="button--flex product__button">
+                        <i class="ri-shopping-bag-line"></i>
+                    </button>
+            </article>
+        
+      
+        </div>
+    </section>
+    <!-- Add other content and styling as needed -->
+
+    <!-- Back button to navigate back to the main page -->
+    <button class="back-button" onclick="goBack()">Go Back</button>
+
+    <!-- Add your JavaScript links here if needed -->
+    <script src="assets/js/scrollreveal.min.js"></script>
+        
+    <!--=============== MAIN JS ===============-->
+    <script src="assets/js/main.js"></script>
+    <script>
+        // JavaScript function to navigate back
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+</body>
+</html>
